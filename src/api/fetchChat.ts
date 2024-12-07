@@ -10,7 +10,9 @@ async function fetchChat({
 		content: string;
 	}[];
 }) {
-	const url = `https://api.infomaniak.com/1/ai/${productId}/openai/chat/completions`;
+	const url = new URL(
+		`https://api.infomaniak.com/1/ai/${productId}/openai/chat/completions`,
+	);
 
 	const headers = new Headers();
 	headers.set("Authorization", `Bearer ${token}`);
